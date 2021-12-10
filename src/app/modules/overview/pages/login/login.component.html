@@ -1,0 +1,24 @@
+<div class="container">
+  <form class="form mat-elevation-z8" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <h2 class="form-title">Login</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" required formControlName="email">
+        <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+          <span *ngIf="email.errors?.['required']">Email is required</span>
+          <span *ngIf="email.errors?.['email']">Email sintaxy is incorrect</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your password</mat-label>
+      <input matInput placeholder="ex123" required formControlName="password"  maxlength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
+      <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+        <span *ngIf="password.errors?.['required']">Password is required</span>
+        <span *ngIf="password.errors?.['pattern']">Password sintaxy is incorrect, follow(Minimum eight characters, at least one letter, one number and one special character:
+
+          )</span>
+      </mat-error>
+    </mat-form-field>
+    <button class="btn btn-submit" type="submit" mat-raised-button [disabled]="formGroup.invalid">Submit</button>
+  </form>
+</div>
