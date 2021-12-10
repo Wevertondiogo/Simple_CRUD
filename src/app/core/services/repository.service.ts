@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
-import { environment } from './../../../environments/environment';
 import { catchError, Observable, retry, throwError } from "rxjs";
+import { environment } from './../../../environments/environment';
 @Injectable({
   providedIn: "root"
 })
@@ -41,18 +41,18 @@ export class RepositoryService {
     return `${this.envAdress}/${endPoint}`;
   }
 
-  private generateHeaders() {
+  private generateHeaders(): { headers: HttpHeaders; } {
     return {
       headers: new HttpHeaders({ 'Content-type': 'applicaiton/json' })
     }
   }
 
-  private handleError(error: HttpErrorResponse) {
+  private handleError(errorResponse: HttpErrorResponse):  Observable<never> {
     let errorMessage: string = "";
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
+    if (errorResponse.error instanceof ErrorEvent) {
+      errorMessage = errorResponse.error.message;
     } else {
-      errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
+      errorMessage = `Código do erro: ${errorResponse.status}, ` + `menssagem: ${errorResponse.message}`;
     }
     console.log(errorMessage);
     return throwError(() => errorMessage);
