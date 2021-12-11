@@ -1,19 +1,12 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Weverton",
+      "email": "weverton@gmail.com",
+      "password": "@W12345d",
+      "description": "",
+      "age": "19",
+      "occupation": "Front-end Developer"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

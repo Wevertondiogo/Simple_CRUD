@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/core/models/User.model';
+import { RepositoryService } from '../../../../core/services/repository.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +10,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 })
 export class LoginComponent implements OnInit {
   public formGroup!: FormGroup;
-  constructor() { }
+  constructor(private repositoryService: RepositoryService) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -20,15 +22,16 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.email
       ])),
-      password: new FormControl("",  Validators.required)
+      password: new FormControl("", Validators.required)
     })
   }
 
   public onSubmit(): void {
-    console.log(this.formGroup.value);
+    console.log(this.formGroup.value)
   }
 
-  get  email(): AbstractControl {
+
+  get email(): AbstractControl {
     return this.formGroup.controls["email"];
   }
 
