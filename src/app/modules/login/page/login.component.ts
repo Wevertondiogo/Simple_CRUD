@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/core/models/User.model';
-import { RepositoryService } from '../../../../core/services/repository.service';
+import { RepositoryService } from '../../../core/services/repository.service';
 
 @Component({
   selector: 'app-login',
