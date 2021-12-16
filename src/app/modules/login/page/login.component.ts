@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/models/User.model';
-import { RepositoryService } from '../../../core/services/repository.service';
 import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./../../../../assets/styles/application.scss']
 })
 export class LoginComponent implements OnInit {
   public formGroup!: FormGroup;
