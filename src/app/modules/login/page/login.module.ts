@@ -11,7 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 
 import { LoginService } from '../services/login.service';
-
 @NgModule({
   declarations: [LoginComponent],
   imports: [
