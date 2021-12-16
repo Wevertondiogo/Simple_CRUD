@@ -1,8 +1,8 @@
+import { User } from 'src/app/core/models/User.model';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   public onSubmit(): void {
     const user = this.formGroup.value;
-    this.loginService.findUser(user).subscribe(users => {
+    this.loginService.findUser(user).subscribe((users: User[]) => {
       users.find(result => {
         if(result.email === user.email && result.password === user.password) {
           this.formGroup.reset();
