@@ -1,12 +1,58 @@
 {
   "users": [
     {
+      "id": 1,
       "name": "Weverton",
       "email": "weverton@gmail.com",
       "password": "@W12345d",
       "description": "",
       "age": "19",
       "occupation": "Front-end Developer"
+    },
+    {
+      "name": "Test@gmail.coms",
+      "email": "sdafdssa@gmail.com",
+      "password": "sfd#4Dsa",
+      "description": "sdafs",
+      "age": "afd",
+      "occupation": "",
+      "id": 3
+    },
+    {
+      "name": "TEst@gmail.com",
+      "email": "dasf@gmail.com",
+      "password": "ssa3A#ss",
+      "description": "sfsdd",
+      "age": "sfsdadf",
+      "occupation": "",
+      "id": 4
+    },
+    {
+      "name": "Urias and Vitor",
+      "email": "Test@gmail.com",
+      "password": "3s%32sas",
+      "description": "Um Urias",
+      "age": 21,
+      "occupation": "Front-end developer",
+      "id": 5
+    },
+    {
+      "name": "Urias and Vitor",
+      "email": "Test@gmail.com",
+      "password": "3s%32sas",
+      "description": "Um Urias",
+      "age": 21,
+      "occupation": "Front-end developer",
+      "id": 6
+    },
+    {
+      "name": "Weverton Diogo Procópio da Cruz",
+      "email": "wever@gmail.com",
+      "password": "@aeT4567",
+      "description": "",
+      "age": 19,
+      "occupation": "Full stack developer",
+      "id": 7
     }
   ]
 }

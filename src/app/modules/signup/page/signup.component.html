@@ -38,14 +38,15 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Enter your age</mat-label>
-      <input matInput placeholder="Your name" required formControlName="age">
+      <input matInput type="number" placeholder="Your name" required formControlName="age">
         <mat-error *ngIf="age.invalid && (age.dirty || age.touched)">
           <span *ngIf="age.errors?.['required']">Age is required</span>
+          <span *ngIf="age.errors?.['max']">Maximum age is 120</span>
         </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Occupation your age</mat-label>
+      <mat-label>Enter your occupation</mat-label>
       <input matInput placeholder="Your occupation" formControlName="occupation">
     </mat-form-field>
 

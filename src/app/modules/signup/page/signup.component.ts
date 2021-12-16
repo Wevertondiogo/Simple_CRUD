@@ -1,5 +1,7 @@
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { SignupService } from '../service/signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,13 +12,16 @@ export class SignupComponent implements OnInit {
   public formGroup!: FormGroup;
   public shown: boolean = false;
 
-  constructor() { }
+  constructor(private signupService: SignupService, private router: Router) { }
 
   ngOnInit(): void {
     this.createForm();
   }
 
-  public onSubmit(): void {}
+  public onSubmit(): void {
+    const user = this.formGroup.value;
+    this.signupService.addUser(user).subscribe(() => this.router.navigate([""]))
+  }
 
   private createForm(): void {
     this.formGroup = new FormGroup({
@@ -27,7 +32,10 @@ export class SignupComponent implements OnInit {
       ])),
       password: new FormControl("", Validators.required),
       description: new FormControl(""),
-      age: new FormControl("", Validators.required),
+      age: new FormControl("",  Validators.compose([
+        Validators.required,
+        Validators.max(120)
+      ])),
       occupation: new FormControl(""),
     })
   }

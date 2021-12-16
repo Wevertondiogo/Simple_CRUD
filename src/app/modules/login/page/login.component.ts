@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     const user = this.formGroup.value;
     this.loginService.findUser(user).subscribe(users => {
       users.find(result => {
-        if(result.email === user.email) {
+        if(result.email === user.email && result.password === user.password) {
           this.formGroup.reset();
           this.router.navigate(['/'])
         } else {
